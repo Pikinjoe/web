@@ -1,0 +1,80 @@
+
+* { 
+    box-sizing: border-box;
+}
+body {
+    background-color: blue;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 150px auto 150px;
+    gap: 20px;
+    grid-template-areas: 
+    "h h"
+    "m m"
+    "f f";
+}
+.main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+   padding: 10px;
+    gap: 10px;
+    grid-area: m;
+}
+.head { 
+    grid-area: h;
+    background-color: rgba(0, 0, 0, 0.823);
+    color: white;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.head a {
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.foot {
+    grid-area: f;
+    background-color: rgba(0, 0, 0, 0.823);
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.foot a {
+    color: white;
+    text-decoration: none;
+}
+.card img {
+    width: 380px;
+}
+@media screen and (max-width:550px) {
+    .main {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 20px;
+        .card img {
+            width: 450px;
+        }
+    }
+    
+}
+@media screen and (min-width: 551px) {
+    .main {
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (min-width:900px) {
+    .main {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (min-width:1300px) {
+    .main {
+        grid-template-columns: auto auto auto auto;
+    }
+}
